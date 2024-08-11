@@ -1,0 +1,1 @@
+export const BACKEND_URL ="https://backend.adarshtiwari9770.workers.dev" 
