@@ -8,6 +8,12 @@ import { useNavigate } from "react-router-dom";
 export const Blogs = () => {
     const navigate = useNavigate();
     const {loading, blogs}= useBlogs();
+    
+     useEffect(()=>{
+        if(!localStorage.getItem('token')){
+          navigate('/signin')
+        }
+      })
 
     if(loading){
         return <div>
@@ -23,9 +29,7 @@ export const Blogs = () => {
             </div> 
         </div>
     }
-     if(!localStorage.getItem('token')){
-        navigate("/signin");
-    }
+    
 
   return (
     <div>
