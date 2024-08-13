@@ -2,6 +2,7 @@ import { BlogSkeleton } from "../components/BlogSkeleton";
 import { Fullblog } from "../components/Fullblog";
 import { useBlog } from "../hooks"
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Blog = () => {
   const { id } = useParams();
@@ -21,6 +22,10 @@ export const Blog = () => {
     </div>
   }
 
+   if(!localStorage.getItem("token")){
+    navigate("/signin");
+  }
+  
   return (
     <div>
       <Fullblog blog={blog}/>
