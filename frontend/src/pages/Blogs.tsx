@@ -1,7 +1,8 @@
 import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
 import { BlogSkeleton } from "../components/BlogSkeleton";
-import { useBlogs } from "../hooks"
+import { useBlogs } from "../hooks";
+import { useNavigate } from "react-router-dom";
 
 
 export const Blogs = () => {
@@ -20,6 +21,9 @@ export const Blogs = () => {
                 </div>
             </div> 
         </div>
+    }
+     if(!localStorage.getItem('token')){
+        navigate("/signin");
     }
 
   return (
