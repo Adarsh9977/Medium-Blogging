@@ -11,6 +11,12 @@ export const Blog = () => {
     id : Number(id)
   });
 
+ useEffect(()=>{
+      if(!localStorage.getItem('token')){
+        navigate('/signin')
+      }
+    })
+
   if(loading || !blog ){
     return <div className="flex justify-center">
       <div className="w-full max-w-screen-lg">
@@ -21,10 +27,6 @@ export const Blog = () => {
       <BlogSkeleton/>
       </div>
     </div>
-  }
-
-   if(!localStorage.getItem("token")){
-    navigate("/signin");
   }
   
   return (
