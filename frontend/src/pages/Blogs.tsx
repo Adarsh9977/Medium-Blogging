@@ -3,6 +3,7 @@ import { BlogCard } from "../components/BlogCard"
 import { BlogSkeleton } from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 export const Blogs = () => {
