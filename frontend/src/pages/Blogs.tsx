@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Blogs = () => {
+    const navigate = useNavigate();
     const {loading, blogs}= useBlogs();
 
     if(loading){
